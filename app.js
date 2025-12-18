@@ -61,6 +61,8 @@ app.use("/reports", reportsRouter);
 // Sequelize models are synced above
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is listening on ${PORT}.....`);
+// Bind to 0.0.0.0 to accept connections from all network interfaces (required for AWS EC2)
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server is listening on http://0.0.0.0:${PORT}.....`);
+  console.log(`Access your application at: http://13.201.42.99:${PORT}/`);
 });
