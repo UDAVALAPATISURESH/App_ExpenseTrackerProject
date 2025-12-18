@@ -30,21 +30,29 @@ dateInput.valueAsDate = new Date();
 // Always use Express server (port 3000) for API calls
 // Live Server (port 5500) is only for serving static files
 function getBaseURL() {
-  // If using file protocol, use Express server
+  // AWS Server Configuration
+  const AWS_SERVER = "http://15.206.168.32:3000";
+  
+  // If using file protocol, use AWS server
   if (window.location.protocol === "file:") {
-    return "http://localhost:3000";
+    return AWS_SERVER;
   }
   
-  // If port is 5500 (Live Server) or hostname is 127.0.0.1, use Express server
+  // If port is 5500 (Live Server) or hostname is 127.0.0.1/localhost, use AWS server
   const currentPort = window.location.port;
   const hostname = window.location.hostname;
   
   if (currentPort === "5500" || hostname === "127.0.0.1" || hostname === "localhost") {
-    return "http://localhost:3000";
+    return AWS_SERVER;
   }
   
-  // For production, use the same origin
-  return window.location.origin;
+  // If already on AWS server, use the same origin
+  if (hostname === "15.206.168.32" || hostname.includes("15.206.168.32")) {
+    return window.location.origin;
+  }
+  
+  // For production, use AWS server
+  return AWS_SERVER;
 }
 
 const API_BASE_URL = getBaseURL();
