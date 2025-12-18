@@ -20,8 +20,9 @@ SECRET_KEY=your-secret-key-for-jwt-tokens-change-this-in-production-min-32-chars
 
 # Application URL
 # For local development: http://localhost:3000
-# For AWS server: https://13.201.42.99
-APP_URL=https://13.201.42.99
+# For AWS server (HTTP): http://13.201.42.99
+# For AWS server (HTTPS): https://13.201.42.99
+APP_URL=http://13.201.42.99
 
 # Cashfree Payment Gateway (for premium membership)
 CASHFREE_APP_ID=your_cashfree_app_id_here
