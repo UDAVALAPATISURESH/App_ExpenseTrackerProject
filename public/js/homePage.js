@@ -31,7 +31,7 @@ dateInput.valueAsDate = new Date();
 // Live Server (port 5500) is only for serving static files
 function getBaseURL() {
   // AWS Server Configuration
-  const AWS_SERVER = "http://15.206.168.32:3000";
+  const AWS_SERVER = "https://13.201.42.99";
   
   // If using file protocol, use AWS server
   if (window.location.protocol === "file:") {
@@ -47,7 +47,7 @@ function getBaseURL() {
   }
   
   // If already on AWS server, use the same origin
-  if (hostname === "15.206.168.32" || hostname.includes("15.206.168.32")) {
+  if (hostname === "13.201.42.99" || hostname.includes("13.201.42.99")) {
     return window.location.origin;
   }
   
