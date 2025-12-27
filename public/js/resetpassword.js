@@ -5,7 +5,7 @@ const resetPasswordBtn = document.getElementById("resetPasswordBtn");
 // Live Server (port 5500) is only for serving static files
 function getBaseURL() {
   // AWS Server Configuration
-  const AWS_SERVER = "http://13.201.42.99";
+  const AWS_SERVER = "http://13.235.45.122";
   
   // If using file protocol, use AWS server
   if (window.location.protocol === "file:") {
@@ -21,7 +21,7 @@ function getBaseURL() {
   }
   
   // If already on AWS server, use the same origin
-  if (hostname === "13.201.42.99" || hostname.includes("13.201.42.99")) {
+  if (hostname === "13.235.45.122" || hostname.includes("13.235.45.122")) {
     return window.location.origin;
   }
   
